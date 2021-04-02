@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="zh-TW">
+<head>
+    {% include 'component/load_style.html' %}
+
+    <!--  Define page title  -->
+    <title>{% block head_title %}{% endblock %} - MEOCR Server</title>
+
+    <!--  Extra settings here.  -->
+    {% block head_content %}{% endblock %}
+</head>
+<body>
+    {% include 'component/empty_navbar.html' %}
+    {% block body %}
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-4">
+                <div class="card">
+                    <div class="card-body">
+                        <h1 class="card-title text-center">{% block body_title %}{% endblock %}</h1>
+                        {% block body_content %}{% endblock %}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    {% endblock %}
+    {% include 'component/footer.html' %}
+</body>
+</html>

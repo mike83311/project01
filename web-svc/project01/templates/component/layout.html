@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="zh-TW">
+<head>
+    {% include 'component/load_style.html' %}
+
+    <!--  Define page title  -->
+    <title>{% block head_title %}{% endblock %} - Project01</title>
+
+    <!--  Extra settings here.  -->
+    {% block head_content %}{% endblock %}
+</head>
+<body>
+    {% include 'component/navbar.html' %}
+
+    <!--  Page Content  -->
+    <div class="container">
+        <!--  Header  -->
+        <div id="header" class="pb-2 mt-4 mb-2 border-bottom text-center">
+            <h1>{% block body_title %}{% endblock %}</h1>
+        </div>
+        
+        <!--  Content  -->
+        <div id="content">
+            {% block body_content %}{% endblock %}
+        </div>
+    </div>
+
+    {% include 'component/footer.html' %}
+</body>
+</html>

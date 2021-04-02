@@ -1,0 +1,14 @@
+{% extends "component/layout.html" %}
+
+{% block head_title %}Home Page{% endblock %}
+{% block head_content %}{% endblock %}
+
+{% comment %} {% block body_title %}Project01{% endblock %} {% endcomment %}
+{% block body_content %}
+{% load static %}
+<div>
+    <a href="{% url 'login' %}">
+        <img src="{% static 'img/enter_page.png' %}" width="100%">
+    </a>
+</div>
+{% endblock %}

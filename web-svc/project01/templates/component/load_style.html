@@ -1,0 +1,18 @@
+<!--  load static/  -->
+{% load static %}
+
+<!--  required meta tags  -->
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<link rel="shortcut icon" href="#">
+
+<!--  Bootstrap: Load CSS  -->
+<link rel="stylesheet" type="text/css" href="{% static 'bootstrap-4.5.3/css/bootstrap.min.css' %}">
+
+<!--  Bootstrap: Load jQuery first, then Popper.js, and then Bootstrap JS  -->
+<script src="{% static 'js/jquery-3.5.1.min.js' %}"></script>
+<script src="{% static 'bootstrap-4.5.3/popper.min.js' %}"></script>
+<script src="{% static 'bootstrap-4.5.3/js/bootstrap.min.js' %}"></script>
+
+<!--  Load global CSS style.  -->
+<link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">

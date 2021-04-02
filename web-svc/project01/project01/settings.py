@@ -34,12 +34,26 @@ ALLOWED_HOSTS = [
 # Application definition
 
 INSTALLED_APPS = [
+    # Django Apps
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+
+    # Third-party Apps
+    'crispy_forms',
+    'rest_framework',
+    'rest_framework.authtoken',
+
+    # Self-defined Apps
+    'root',
+    'accounts',
+    'lab',
+    # 'image_manage',
+    # 'label',
+
 ]
 
 MIDDLEWARE = [
@@ -135,6 +149,41 @@ STATICFILES_DIRS = [
     os.path.join(BASE_DIR, "static"),
 ]
 
+
 # Media Path
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+
+
+# Settings: django auth
+AUTH_USER_MODEL = 'accounts.User'
+AUTHENTICATION_BACKENDS = (
+    'accounts.backend.CustomBackend',
+)
+
+# Login and logout redirect
+LOGIN_REDIRECT_URL = '/index'
+LOGIN_URL = '/accounts/login'
+LOGOUT_REDIRECT_URL = '/'
+
+
+# Settings: crispy_forms
+CRISPY_TEMPLATE_PACK = 'bootstrap4'
+
+
+# Settings: rest framework
+# https://www.django-rest-framework.org/
+REST_FRAMEWORK = {
+    'DEFAULT_AUTHENTICATION_CLASSES': [
+        'accounts.authentication.CustomTokenAuthentication',
+    ],
+    'DEFAULT_PERMISSION_CLASSES': (
+        'rest_framework.permissions.IsAuthenticated',
+    ),
+    'DEFAULT_PAGINATION_CLASS': 'rest_framework.pagination.PageNumberPagination',
+    'PAGE_SIZE': 10,
+}
+
+
+# Self-defined Settings
+ADMIN_ENABLED = False

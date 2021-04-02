@@ -1,0 +1,12 @@
+{% extends 'registration/layout.html' %}
+
+{% block head_title %}User Login{% endblock %}
+{% block body_title %}Login{% endblock %}
+{% block body_content %}
+{% load crispy_forms_tags %}
+<form method="post">
+    {% csrf_token %}
+    {{ form|crispy }}
+    <button type="submit" class="btn btn-primary btn-block">Log in</button>
+</form>
+{% endblock %}

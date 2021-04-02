@@ -1,0 +1,70 @@
+/**************************************************
+    Theme Style
+***************************************************/
+.bg-dark {
+   background-color: Black !important;
+   color: GhostWhite !important;
+}
+
+.bg-dark>a {
+   color: DodgerBlue !important;
+}
+
+/**************************************************
+   Navbar
+***************************************************/
+.navbar {
+   padding: 0px;
+}
+
+.navbar a {
+   padding: 14px 22px !important;
+}
+
+.navbar-nav>.active {
+   background-color: DodgerBlue !important;
+}
+
+.navbar-nav>.active>a:hover {
+   color: GhostWhite !important;
+}
+
+.navbar-dark .navbar-brand {
+   color: DodgerBlue !important;
+}
+
+.navbar-dark .navbar-text,
+.navbar-dark a {
+   color: GhostWhite !important;
+}
+
+.navbar-dark .navbar-text:hover,
+.navbar-dark a:hover {
+   color: DodgerBlue !important;
+}
+
+.dropdown:hover>.dropdown-menu {
+   display: block;
+}
+
+.dropdown-menu {
+   color: Black !important;
+   text-align: center;
+}
+
+.dropdown-menu a {
+   padding: 4px 0px !important;
+}
+
+/**************************************************
+   Footer
+***************************************************/
+#footer {
+   position: fixed;
+   left: 0;
+   bottom: 0;
+   width: 100%;
+   text-align: center;
+   padding: 1px;
+   color: var(--theme-text-color);
+}

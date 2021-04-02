@@ -1,0 +1,10 @@
+{% extends 'registration/layout.html' %}
+
+{% block head_title %}User Logout{% endblock %}
+{% block body_title %}Logout{% endblock %}
+{% block body_content %}
+<div class="text-center">
+    You are logged out!<br><br>
+    <a href="{% url 'login' %}">Log in again</a>
+</div>
+{% endblock %}

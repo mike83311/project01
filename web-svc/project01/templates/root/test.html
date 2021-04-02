@@ -1,0 +1,37 @@
+{% extends "component/layout.html" %}
+{% block head_title %}Test{% endblock %}
+{% block body_title %}Testing Page{% endblock %}
+{% block body_content %}
+<div class="row justify-content-center">
+    <div class="col-8">
+        <h3 class="text-center">user</h3>
+        <table class="table">
+            <thead>
+                <tr>
+                    <th scope="col">Field</th>
+                    <th scope="col">Value</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <th scope="row">username</th>
+                    <td>{{ user.username }}</td>
+                </tr>
+                <tr>
+                    <th scope="row">password</th>
+                    <td>{{ user.password }}</td>
+                </tr>
+                <tr>
+                    <th scope="row">is_authenticated</th>
+                    <td>{{ user.is_authenticated }}</td>
+                </tr>
+                <tr>
+                    <th scope="row">token</th>
+                    <td>{{ user.token }}</td>
+                </tr>
+
+            </tbody>
+        </table>
+    </div>
+</div>
+{% endblock %}

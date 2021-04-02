@@ -1,0 +1,22 @@
+<!doctype html>
+<html lang="zh-TW">
+<head>
+    {% include 'component/load_style.html' %}
+    <title>{{ error_code }} {{ error_type }} - Project01</title>
+</head>
+<body>
+    {% include 'component/empty_navbar.html' %}
+    <div class="container text-center">
+        <!--  Header  -->
+        <div class="pb-2 mt-4 mb-2 border-bottom">
+            <h1>Error {{ error_code }} : {{ error_type }}</h1>
+        </div>
+        <!--  Content  -->
+        <div>
+            <br>{{ error_msg }}<br><br><br>
+            <h4><a href="{% url 'home' %}">Back to Homepage</a></h4>
+        </div>
+    </div>
+    {% include 'component/footer.html' %}
+</body>
+</html>

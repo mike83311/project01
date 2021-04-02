@@ -1,0 +1,31 @@
+{% extends "component/layout.html" %}
+
+{% block head_title %}Project01{% endblock %}
+{% block head_content %}{% endblock %}
+
+{% block body_title %}Project01{% endblock %}
+{% block body_content %}
+<div class="card-deck">
+    <!--  1. LAB  -->
+    <div class="card">
+        <div class="card-header"><h5>Lab</h5></div>
+        <div class="card-body">
+            1. Library for papers.<br>
+            2. Information of lab members.<br>
+            3. Research results of lab.<br>
+            <br>
+            <a href="{% url 'lab:home' %}" class="btn btn-primary">LAB</a>
+        </div>
+    </div>
+
+    <!--  2. STOCK  -->
+    <div class="card">
+        <div class="card-header"><h5>Stock</h5></div>
+        <div class="card-body">
+            XXXXXXXXXXXXXXX.<br><br><br>
+            <br>
+            <a href="#}" class="btn btn-primary">STOCK</a>
+        </div>
+    </div>
+</div>
+{% endblock %}

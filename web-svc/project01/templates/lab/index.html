@@ -1,0 +1,40 @@
+{% extends "component/layout.html" %}
+
+{% block head_title %}Project01{% endblock %}
+{% block head_content %}{% endblock %}
+
+{% block body_title %}Project01 - Lab{% endblock %}
+{% block body_content %}
+<div class="card-deck">
+    <!--  1. LIBRARY  -->
+    <div class="card">
+        <div class="card-header"><h5>Library</h5></div>
+        <div class="card-body">
+            1. Library for papers.<br>
+            2. Information of lab members.<br>
+            3. Research results of lab.<br>
+            {% comment %} <a href="{% url 'recognition_demo_page' %}" class="btn btn-primary">Recognition</a> {% endcomment %}
+        </div>
+    </div>
+
+    <!--  2. LAB MEMBERS  -->
+    <div class="card">
+        <div class="card-header"><h5>Lab Members</h5></div>
+        <div class="card-body">
+            Directly HTTP POST API with a upload image file.<br><br><br>
+            POST<br>
+            {% comment %} <a href="{% url 'recognition_demo_page' %}" class="btn btn-primary">IMAGE MANAGEMENT</a> {% endcomment %}
+        </div>
+    </div>
+
+    <!--  3. RESEARCH RESULTS  -->
+    <div class="card">
+        <div class="card-header"><h5>Research Results</h5></div>
+        <div class="card-body">
+            Directly HTTP POST API with a upload image file.<br><br><br>
+            POST<br>
+            {% comment %} <a href="{% url 'recognition_demo_page' %}" class="btn btn-primary">IMAGE MANAGEMENT</a> {% endcomment %}
+        </div>
+    </div>
+</div>
+{% endblock %}
