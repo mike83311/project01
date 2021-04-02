@@ -1,0 +1,65 @@
+version: '3'
+
+services:
+  ### forestage-svc ###
+  # forestage-svc:
+  #   build:
+  #     context: ../forestage-svc
+  #     dockerfile: Dockerfile
+  #   image: medical_equipment_ocr/forestage-svc:latest
+  #   container_name: forestage-svc
+  #   restart: always
+  #   command: bash -c "/web/wait-for-it.sh mysql-svc:3306 && python /web/forestage_django/manage.py runserver 0.0.0.0:8000"
+  #   volumes:
+  #     - ../forestage-svc:/web
+  #   expose:
+  #     - "8000"
+  #   depends_on:
+  #     - mysql-svc
+  ### forestage-svc ###
+  ### backstage-svc ###
+  web-svc:
+    build:
+      context: ../web-svc
+      dockerfile: Dockerfile
+    image: project01/web-svc:0.0.0
+    container_name: web-svc
+    restart: always
+    command: bash -c "/web/wait-for-it.sh mysql-svc:3306 && python /web/project01/manage.py runserver 0.0.0.0:8000"
+    volumes:
+      - ../web-svc:/web
+    expose:
+      - "8000"
+    depends_on:
+      - mysql-svc
+  ### backstage-svc ###
+  ### mysql-svc ###
+  mysql-svc:
+    build:
+      context: ../mysql-svc
+      dockerfile: Dockerfile
+    image: project01/mysql-svc:0.0.0
+    container_name: mysql-svc
+    restart: always
+    ports:
+      - "3306:3306"
+    volumes:
+      - ../mysql-svc/db:/var/lib/mysql
+    environment:
+      MYSQL_ROOT_PASSWORD: 'project01'
+  ### mysql-svc ###
+  ### nginx-svc ###
+  nginx-svc:
+    build:
+      context: ../nginx-svc
+      dockerfile: Dockerfile
+    image: project01/nginx-svc:0.0.0
+    container_name: nginx-svc
+    restart: always
+    ports:
+      - "443:443"     # nginx_forestage
+      # - "8080:8080"  # nginx_backstage
+    depends_on:
+      # - forestage-svc # nginx_forestage
+      - web-svc # nginx_backstage
+  ### nginx-svc ###
